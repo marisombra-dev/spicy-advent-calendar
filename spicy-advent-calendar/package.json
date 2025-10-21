@@ -1,0 +1,30 @@
+{
+  "name": "spicy-advent-calendar",
+  "version": "1.0.0",
+  "description": "A spicy advent calendar with surprises for December",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/spicy-advent-calendar.git"
+  },
+  "keywords": [
+    "advent",
+    "calendar",
+    "romance",
+    "couples",
+    "self-love"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/spicy-advent-calendar/issues"
+  },
+  "homepage": "https://github.com/yourusername/spicy-advent-calendar#readme",
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^12.0.0"
+  }
+}

@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.setup-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.setup-content {
+    background: white;
+    color: #333;
+    padding: 60px 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.setup-question {
+    font-size: 2em;
+    color: #764ba2;
+    margin-bottom: 40px;
+}
+
+.setup-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(145deg, #764ba2, #667eea);
+    color: white;
+    border: none;
+    padding: 25px 40px;
+    border-radius: 15px;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+.setup-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.5);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.door {
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #fff, #f0f0f0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #764ba2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.door:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.door.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: linear-gradient(145deg, #ccc, #aaa);
+}
+
+.door.opened {
+    background: linear-gradient(145deg, #ffd700, #ffed4e);
+    color: #764ba2;
+}
+
+.door::before {
+    content: '🎁';
+    position: absolute;
+    font-size: 0.5em;
+    top: 10px;
+    right: 10px;
+}
+
+.door.opened::before {
+    content: '⭐';
+}
+
+.door-icon {
+    position: absolute;
+    font-size: 0.4em;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0.6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.modal-header {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #764ba2;
+    text-align: center;
+}
+
+.modal-body {
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #222;
+}
+
+.close-btn {
+    background: #764ba2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #667eea;
+}
+
+.dice-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.die {
+    background: linear-gradient(145deg, #764ba2, #667eea);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    min-width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+.roll-btn {
+    background: linear-gradient(145deg, #764ba2, #667eea);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+.roll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.5);
+}
+
+.heat-btn {
+    background: linear-gradient(145deg, #ff6b6b, #ee5a6f);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.heat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+}
+
+.content-type {
+    background: linear-gradient(145deg, #764ba2, #667eea);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.reset-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .setup-question {
+        font-size: 1.5em;
+    }
+    
+    .setup-btn {
+        font-size: 1.1em;
+        padding: 20px 30px;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .door {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spicy Advent Calendar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="setupScreen" class="setup-screen">
+        <div class="setup-content">
+            <h1 style="color: #764ba2; margin-bottom: 20px;">🎄 Spicy Advent Calendar 🔥</h1>
+            <p class="setup-question">Who's celebrating?</p>
+            <button class="setup-btn" onclick="selectMode('single')">✨ Just Me ✨</button>
+            <button class="setup-btn" onclick="selectMode('partner')">💑 Me & My Partner 💑</button>
+        </div>
+    </div>
+
+    <div id="calendarView" class="container hidden">
+        <h1>🎄 Spicy Advent Calendar 🔥</h1>
+        <p class="subtitle">Unwrap a new surprise each day!</p>
+        
+        <div class="calendar-grid" id="calendar"></div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="reset-btn" onclick="resetCalendar()">Reset Calendar</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-header" id="modalHeader">Day X</h2>
+            <div class="modal-body" id="modalBody"></div>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="js/content.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

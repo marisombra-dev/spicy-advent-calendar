@@ -192,5 +192,9 @@ This app contains adult themes and is intended for mature audiences (18+).
 Created with love for romantic adventures and personal growth during the holiday season.
 
 ---
-
+## 💫 Let's connect
+- 💌 [Email](mailto:marisombra@proton.me)
+- 🎮 [Twitch](https://www.twitch.tv/marissombra)    
+- 🧵 [TikTok](https://www.tiktok.com/@marissombra)
+- 🪩 [Itch.io](https://marisombra.itch.io/) (for games)
 **Enjoy your December surprises!** 🎁✨
